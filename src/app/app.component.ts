@@ -9,22 +9,16 @@ import { ITEMS } from '../app/mock-data';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  radioSel: any;
   radioSelected: string;
   itemSelected: Item;
   itemsList: Item[] = ITEMS;
 
   constructor() {
-    this.itemsList = ITEMS;
     this.radioSelected = this.itemsList[0].img;
-    this.getSelecteditem();
+    this.getSelecteditem(this.itemsList[0]);
   }
 
-  getSelecteditem() {
-    this.itemSelected = ITEMS.find(i => i.img === this.radioSelected);
-  }
-
-  onItemChange(item: Item): void {
+  getSelecteditem(item: Item): void {
     this.itemSelected = item;
   }
 }

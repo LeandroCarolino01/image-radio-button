@@ -3,11 +3,11 @@
     <ul>
       <li *ngFor="let item of itemsList">
         <input
-          type="radio"
           [(ngModel)]="radioSelected"
+          type="radio"
           name="img"
           value="{{ item.img }}"
-          (change)="onItemChange(item)"
+          (change)="getSelecteditem(item)"
         />
         {{ item.name }}
         <img src="{{ item.img }}" />
