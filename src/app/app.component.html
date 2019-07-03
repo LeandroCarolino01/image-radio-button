@@ -1,20 +1,22 @@
 <div>
- 
-   
   <div>
     <ul>
-          <li  *ngFor="let item of itemsList">
-            <input type="radio" [(ngModel)]="radioSelected" name="img" value="{{item.img}}" (change)="onItemChange(item)"/> 
-            {{item.name}}
-            <img src='{{item.img}}'/>
-          </li>
+      <li *ngFor="let item of itemsList">
+        <input
+          type="radio"
+          [(ngModel)]="radioSelected"
+          name="img"
+          value="{{ item.img }}"
+          (change)="onItemChange(item)"
+        />
+        {{ item.name }}
+        <img src="{{ item.img }}" />
+      </li>
     </ul>
   </div>
-   
-  
-  <div class="image-preview">
-    <h5>{{radioSelectedString}}</h5>
-  </div>
 
-   
+  <div class="image-preview">
+    <h5>{{ itemSelected.name }}</h5>
+    <img src="{{ itemSelected.img }}" />
   </div>
+</div>
